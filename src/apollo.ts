@@ -33,15 +33,11 @@ export const logUserOut = async () => {
 };
 
 const uploadHttpLink = createUploadLink({
-  uri: "http://10.0.2.2:4000/graphql",
-  //uri: "https://instaclone-backend-ohsse.herokuapp.com/graphql",
-  //uri: "https://swift-wolverine-68.loca.lt/graphql",
+  uri: "http://3.37.205.34:4000/graphql",
 });
 
 const wsLink = new WebSocketLink({
-  uri: "ws://10.0.2.2:4000/graphql",
-  //uri: "ws://instaclone-backend-ohsse.herokuapp.com/graphql",
-  //uri: "ws://swift-wolverine-68.loca.lt/graphql",
+  uri: "ws://3.37.205.34:4000/graphql",
   options: {
     connectionParams: () => ({
       token: tokenVar(),

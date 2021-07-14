@@ -5,6 +5,11 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
+    ],
+    "plugins": [
+      "expo-camera",
+      "expo-file-system",
+      "expo-media-library"
     ]
   },
   "name": "instaclone-frontend"

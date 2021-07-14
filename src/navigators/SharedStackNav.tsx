@@ -38,7 +38,7 @@ export default function SharedStackNav({ screenName }) {
                   height: 40,
                 }}
                 resizeMode="contain"
-                source={require("../assets/logo2.png")}
+                source={require("../../assets/logo2.png")}
               />
             ),
           }}
