@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "instaclone-frontend",
+    "slug": "instaclone-frontend",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "instaclone-frontend"
+}
