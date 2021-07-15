@@ -8,6 +8,7 @@ import styled from "styled-components/native";
 import { colors } from "../colors";
 import DismissKeyboard from "../components/DismissKeyboard";
 import { FEED_PHOTO } from "../fragments";
+import { ConfirmPageArrow } from "../icons/NavIcons";
 
 const UPLOAD_PHOTO_MUTATION = gql`
   mutation uploadPhoto($file: Upload!, $caption: String) {
@@ -68,7 +69,7 @@ export default function UploadForm({ route, navigation }) {
   );
   const HeaderRight = () => (
     <TouchableOpacity onPress={handleSubmit(onValid)}>
-      <HeaderRightText>Next</HeaderRightText>
+      <ConfirmPageArrow />
     </TouchableOpacity>
   );
   const HeaderRightLoading = () => (

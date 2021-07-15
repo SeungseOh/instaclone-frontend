@@ -10,6 +10,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { colors } from "../colors";
+import { NextPageArrow } from "../icons/NavIcons";
 
 const Container = styled.View`
   flex: 1;
@@ -42,7 +43,23 @@ export default function SelectPhoto({ navigation }) {
   const [chosenPhoto, setChosenPhoto] = useState<string>("");
 
   const getPhotos = async () => {
-    const { assets: photos } = await MediaLibrary.getAssetsAsync();
+    // * 모든 앨범 정보
+    const albums = await MediaLibrary.getAlbumsAsync();
+    const albumList = albums.map((album) => album.title);
+    console.log(albumList);
+
+    // * Default 앨범 경로 지정
+    const albumName = "Camera";
+    const album = await MediaLibrary.getAlbumAsync(albumName);
+
+    // * 요청하는 앨범에서 사진을 로드한다.
+    const { assets: photos } = await MediaLibrary.getAssetsAsync({
+      first: 200,
+      album,
+      sortBy: ["creationTime"],
+      mediaType: ["photo", "video"],
+    });
+
     setPhotos(photos);
     setChosenPhoto(photos[0]?.uri);
   };
@@ -69,7 +86,7 @@ export default function SelectPhoto({ navigation }) {
         })
       }
     >
-      <HeaderRightText>Next</HeaderRightText>
+      <NextPageArrow />
     </TouchableOpacity>
   );
 

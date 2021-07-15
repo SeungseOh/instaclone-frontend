@@ -40,7 +40,7 @@ export default function UploadNav() {
           >
             <Stack.Screen
               name="Select"
-              options={{ title: "Choose a photo" }}
+              options={{ title: "새 게시물" }}
               component={SelectPhoto}
             />
           </Stack.Navigator>
