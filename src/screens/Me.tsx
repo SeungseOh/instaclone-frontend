@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Text, View } from "react-native";
-import useMe from "../hooks/useMe";
+import useMe from "../hooks/UseMe";
 
 export default function Me({ navigation }) {
   const { data } = useMe();

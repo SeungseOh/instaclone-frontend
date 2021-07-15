@@ -2,7 +2,7 @@ import { gql, useMutation } from "@apollo/client";
 import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { isLoggedInVar, logUserIn } from "../apollo";
+import { logUserIn } from "../Client";
 import AuthButton from "../components/authentication/AuthButton";
 import AuthLayout from "../components/authentication/AuthLayout";
 import { TextInput } from "../components/authentication/AuthShared";

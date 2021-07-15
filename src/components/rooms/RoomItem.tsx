@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
-import useMe from "../../hooks/useMe";
 import { useNavigation } from "@react-navigation/core";
 import Colors from "../../style/Colors";
+import useMe from "../../hooks/UseMe";
 
 const RoomContainer = styled.TouchableOpacity`
   width: 100%;

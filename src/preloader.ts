@@ -1,4 +1,4 @@
-import { isLoggedInVar, tokenVar, cache } from "./apollo";
+import { isLoggedInVar, tokenVar, cache } from "./Client";
 import { Ionicons } from "@expo/vector-icons";
 import * as Font from "expo-font";
 import { Asset } from "expo-asset";

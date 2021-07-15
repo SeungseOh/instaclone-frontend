@@ -1,6 +1,6 @@
 import { useQuery, useReactiveVar } from "@apollo/client";
 import { useEffect } from "react";
-import { isLoggedInVar, logUserOut } from "../apollo";
+import { isLoggedInVar, logUserOut } from "../Client";
 import { ME_QUERY } from "../graphql/User";
 
 export default function useMe() {

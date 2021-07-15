@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { ROOM_FRAGMENT } from "../fragments";
+import { ROOM_FRAGMENT } from "./Fragments";
 
 export const SEE_ROOMS_QUERY = gql`
   query seeRooms {

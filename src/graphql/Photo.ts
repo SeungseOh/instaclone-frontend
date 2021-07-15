@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { FEED_PHOTO, PHOTO_FRAGMENT, USER_FRAGMENT } from "../fragments";
+import { FEED_PHOTO, PHOTO_FRAGMENT, USER_FRAGMENT } from "./Fragments";
 
 export const SEE_PHOTO = gql`
   query seePhoto($id: Int!) {

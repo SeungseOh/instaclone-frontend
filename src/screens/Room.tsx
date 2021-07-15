@@ -10,7 +10,7 @@ import { FlatList, KeyboardAvoidingView, View } from "react-native";
 import ScreenLayout from "../components/ScreenLayout";
 import { useForm } from "react-hook-form";
 import { Ionicons } from "@expo/vector-icons";
-import useMe from "../hooks/useMe";
+import useMe from "../hooks/UseMe";
 import {
   ROOM_QUERY,
   ROOM_UPDATES,

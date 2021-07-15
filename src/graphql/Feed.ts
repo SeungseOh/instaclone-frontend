@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { COMMENT_FRAGMENT, PHOTO_FRAGMENT } from "../fragments";
+import { PHOTO_FRAGMENT, COMMENT_FRAGMENT } from "./Fragments";
 
 export const FEED_QUERY = gql`
   query seeFeed($offset: Int!) {

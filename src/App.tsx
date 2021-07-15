@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import LoggedOutNav from "./navigators/LoggedOutNav";
 import { NavigationContainer } from "@react-navigation/native";
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
-import { client, isLoggedInVar } from "./apollo";
+import { client, isLoggedInVar } from "./Client";
 import LoggedInNav from "./navigators/LoggedInNav";
-import Preloader from "./preloader";
+import Preloader from "./Preloader";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
