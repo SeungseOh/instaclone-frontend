@@ -1,31 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
 import { FlatList, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Photo from "../components/Photo";
 import ScreenLayout from "../components/ScreenLayout";
-import { COMMENT_FRAGMENT, PHOTO_FRAGMENT } from "../fragments";
-
-const FEED_QUERY = gql`
-  query seeFeed($offset: Int!) {
-    seeFeed(offset: $offset) {
-      ...PhotoFragment
-      user {
-        id
-        username
-        avatar
-      }
-      caption
-      comments {
-        ...CommentFragment
-      }
-      createdAt
-      isMine
-    }
-  }
-  ${PHOTO_FRAGMENT}
-  ${COMMENT_FRAGMENT}
-`;
+import { FEED_QUERY } from "../graphql/Feed";
 
 export default function Feed({ navigation }) {
   const { data, loading, refetch, fetchMore } = useQuery(FEED_QUERY, {

@@ -6,15 +6,7 @@ import styled from "styled-components/native";
 import { Image, useWindowDimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { gql, useMutation } from "@apollo/client";
-
-const TOGGLE_LIKE_MUTATION = gql`
-  mutation toggleLike($id: Int!) {
-    toggleLike(id: $id) {
-      ok
-      error
-    }
-  }
-`;
+import { TOGGLE_LIKE_MUTATION } from "../graphql/Photo";
 
 const Container = styled.View``;
 const Header = styled.TouchableOpacity`

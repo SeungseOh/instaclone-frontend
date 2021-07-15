@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import * as MediaLibrary from "expo-media-library";
-import styled from "styled-components/native";
 import {
   FlatList,
   Image,
@@ -11,31 +10,13 @@ import {
 } from "react-native";
 import { colors } from "../colors";
 import { NextPageArrow } from "../icons/NavIcons";
-
-const Container = styled.View`
-  flex: 1;
-  background-color: black;
-`;
-const Top = styled.View`
-  flex: 1;
-  background-color: black;
-`;
-const Bottom = styled.View`
-  flex: 1;
-  background-color: black;
-`;
-const ImageContainer = styled.TouchableOpacity``;
-const IconContainer = styled.View`
-  position: absolute;
-  bottom: 5px;
-  right: 0px;
-`;
-const HeaderRightText = styled.Text`
-  color: ${colors.blue};
-  font-size: 16px;
-  font-weight: 600;
-  margin-right: 7px;
-`;
+import {
+  Bottom,
+  Container,
+  IconContainer,
+  ImageContainer,
+  Top,
+} from "../style/Photo";
 
 export default function SelectPhoto({ navigation }) {
   const [ok, setOk] = useState(false);

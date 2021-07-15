@@ -1,25 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { RefreshControl, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Photo from "../components/Photo";
 import ScreenLayout from "../components/ScreenLayout";
-import { PHOTO_FRAGMENT } from "../fragments";
-
-const SEE_PHOTO = gql`
-  query seePhoto($id: Int!) {
-    seePhoto(id: $id) {
-      ...PhotoFragment
-      user {
-        id
-        username
-        avatar
-      }
-      caption
-    }
-  }
-  ${PHOTO_FRAGMENT}
-`;
+import { SEE_PHOTO } from "../graphql/Photo";
 
 export default function PhotoScreen({ route }) {
   const { data, loading, refetch } = useQuery(SEE_PHOTO, {

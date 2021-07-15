@@ -1,30 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import AuthButton from "../components/auth/AuthButton";
 import AuthLayout from "../components/auth/AuthLayout";
 import { TextInput } from "../components/auth/AuthShared";
-
-const CREATE_ACCOUNT_MUTATION = gql`
-  mutation createAccount(
-    $firstName: String!
-    $lastName: String
-    $username: String!
-    $email: String!
-    $password: String!
-  ) {
-    createAccount(
-      firstName: $firstName
-      lastName: $lastName
-      username: $username
-      email: $email
-      password: $password
-    ) {
-      ok
-      error
-    }
-  }
-`;
+import { CREATE_ACCOUNT_MUTATION } from "../graphql/User";
 
 export default function CreateAccount({ navigation }) {
   const { register, handleSubmit, setValue, getValues } = useForm();

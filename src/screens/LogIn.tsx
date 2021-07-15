@@ -6,16 +6,7 @@ import { isLoggedInVar, logUserIn } from "../apollo";
 import AuthButton from "../components/auth/AuthButton";
 import AuthLayout from "../components/auth/AuthLayout";
 import { TextInput } from "../components/auth/AuthShared";
-
-const LOGIN_MUTATION = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
-      ok
-      token
-      error
-    }
-  }
-`;
+import { LOGIN_MUTATION } from "../graphql/User";
 
 export default function Login({ route: { params } }) {
   const { register, handleSubmit, setValue, watch } = useForm({

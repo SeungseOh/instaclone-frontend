@@ -1,56 +1,31 @@
 import AppLoading from "expo-app-loading";
 import React, { useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import * as Font from "expo-font";
-import { Asset } from "expo-asset";
 import LoggedOutNav from "./navigators/LoggedOutNav";
 import { NavigationContainer } from "@react-navigation/native";
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
-import client, { isLoggedInVar, tokenVar, cache } from "./apollo";
+import { client, isLoggedInVar } from "./apollo";
 import LoggedInNav from "./navigators/LoggedInNav";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { AsyncStorageWrapper, persistCache } from "apollo3-cache-persist";
+import Preloader from "./preloader";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  // * onFinish 로딩 종료
+  // * 앱로딩 종료 콜백
   const onFinish = () => setLoading(false);
+  // * 로그인 검증변수
   const isLoggedIn = useReactiveVar(isLoggedInVar);
-  const preloadAssets = async () => {
-    const fontsToLoad = [Ionicons.font];
-    const fontPromises = fontsToLoad.map((font) => Font.loadAsync(font));
-    const imagesToLoad = [require("../assets/logo.png")];
-    const imagePromises = imagesToLoad.map((image) => Asset.loadAsync(image));
-    await Promise.all<Promise<void> | Promise<Asset[]>>([
-      ...fontPromises,
-      ...imagePromises,
-    ]);
-    // await Promise.all(fontPromises);
-  };
-
-  const preload = async () => {
-    const token = await AsyncStorage.getItem("token");
-    if (token) {
-      isLoggedInVar(true);
-      tokenVar(token);
-    }
-    /* await persistCache({
-      cache,
-      storage: new AsyncStorageWrapper(AsyncStorage),
-      serialize: false,
-    }); */
-    return preloadAssets();
-  };
+  // * 프리로더 호출
+  const preloader = new Preloader();
 
   if (loading) {
     return (
       <AppLoading
-        startAsync={preload}
+        startAsync={preloader.preload}
         onError={console.warn}
         onFinish={onFinish}
       />
     );
   }
+  // * 앱로딩 종료시 클라이언트 실행
   return (
     <ApolloProvider client={client}>
       <NavigationContainer>

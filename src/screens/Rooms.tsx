@@ -1,19 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import React from "react";
 import { FlatList, View } from "react-native";
 import styled from "styled-components/native";
 import RoomItem from "../components/rooms/RoomItem";
 import ScreenLayout from "../components/ScreenLayout";
-import { ROOM_FRAGMENT } from "../fragments";
-
-const SEE_ROOMS_QUERY = gql`
-  query seeRooms {
-    seeRooms {
-      ...RoomParts
-    }
-  }
-  ${ROOM_FRAGMENT}
-`;
+import { SEE_ROOMS_QUERY } from "../graphql/Room";
 
 export default function Rooms() {
   const { data, loading } = useQuery(SEE_ROOMS_QUERY);

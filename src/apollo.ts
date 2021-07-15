@@ -87,9 +87,7 @@ const splitLink = split(
   httpLinks
 );
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   link: splitLink,
   cache,
 });
-
-export default client;

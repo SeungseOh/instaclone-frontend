@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { Text, View, FlatList } from "react-native";
-import { gql, useQuery } from "@apollo/client";
-import { USER_FRAGMENT } from "../fragments";
+import { useQuery } from "@apollo/client";
 import ScreenLayout from "../components/ScreenLayout";
 import UserRow from "../components/UserRow";
-
-const LIKES_QUERY = gql`
-  query seePhotoLikes($id: Int!) {
-    seePhotoLikes(id: $id) {
-      ...UserFragment
-    }
-  }
-  ${USER_FRAGMENT}
-`;
+import { LIKES_QUERY } from "../graphql/Photo";
 
 export default function Likes({ route }) {
   const [refreshing, setRefreshing] = useState(false);
