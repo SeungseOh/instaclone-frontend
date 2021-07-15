@@ -8,15 +8,10 @@ import {
   TouchableOpacity,
   useWindowDimensions,
 } from "react-native";
-import { colors } from "../colors";
 import { NextPageArrow } from "../icons/NavIcons";
-import {
-  Bottom,
-  Container,
-  IconContainer,
-  ImageContainer,
-  Top,
-} from "../style/Photo";
+import Colors from "../style/Colors";
+import { Container, IconContainer, ImageContainer } from "../style/View.Container";
+import { Bottom, Top } from "../style/View";
 
 export default function SelectPhoto({ navigation }) {
   const [ok, setOk] = useState(false);
@@ -96,7 +91,7 @@ export default function SelectPhoto({ navigation }) {
         <Ionicons
           name="checkmark-circle"
           size={18}
-          color={photo.uri === chosenPhoto ? colors.blue : "white"}
+          color={photo.uri === chosenPhoto ? Colors.blue : "white"}
         />
       </IconContainer>
     </ImageContainer>

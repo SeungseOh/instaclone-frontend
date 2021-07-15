@@ -7,12 +7,9 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import DismissKeyboard from "../components/DismissKeyboard";
 import { UPLOAD_PHOTO_MUTATION } from "../graphql/Photo";
 import { ConfirmPageArrow } from "../icons/NavIcons";
-import {
-  Caption,
-  CaptionContainer,
-  ContainerForm,
-  Photo,
-} from "../style/Photo";
+import { Photo } from "../style/Image";
+import { Caption } from "../style/Text.Input";
+import { CaptionContainer, ContainerForm } from "../style/View.Container";
 
 export default function UploadForm({ route, navigation }) {
   const updateUploadPhoto = (cache, result) => {

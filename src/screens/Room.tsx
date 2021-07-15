@@ -16,15 +16,12 @@ import {
   ROOM_UPDATES,
   SEND_MESSAGE_MUTATION,
 } from "../graphql/Room";
-import {
-  Author,
-  Avatar,
-  InputContainer,
-  Message,
-  MessageContainer,
-  SendButton,
-  TextInput,
-} from "../style/Room";
+import { InputContainer, MessageContainer } from "../style/View.Container";
+import { Author } from "../style/View";
+import { Avatar } from "../style/Image";
+import { Message } from "../style/Text";
+import { TextInput } from "../style/Text.Input";
+import { SendButton } from "../style/Button";
 
 export default function Room({ route, navigation }) {
   const { data: meData } = useMe();

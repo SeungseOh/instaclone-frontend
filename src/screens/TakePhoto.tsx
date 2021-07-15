@@ -6,17 +6,14 @@ import Slider from "@react-native-community/slider";
 import * as MediaLibrary from "expo-media-library";
 import { useIsFocused } from "@react-navigation/core";
 import {
-  Actions,
   ActionsContainer,
   ButtonsContainer,
-  CloseButton,
   Container,
-  PhotoAction,
-  PhotoActions,
-  PhotoActionText,
   SliderContainer,
-  TakePhotoBtn,
-} from "../style/Photo";
+} from "../style/View.Container";
+import { CloseButton, PhotoAction, TakePhotoBtn } from "../style/Button";
+import { Actions, PhotoActions } from "../style/View";
+import { PhotoActionText } from "../style/Text";
 
 export default function TakePhoto({ navigation }) {
   const camera = useRef<Camera>();

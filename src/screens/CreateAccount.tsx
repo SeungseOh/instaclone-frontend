@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
-import AuthButton from "../components/auth/AuthButton";
-import AuthLayout from "../components/auth/AuthLayout";
-import { TextInput } from "../components/auth/AuthShared";
+import AuthButton from "../components/authentication/AuthButton";
+import AuthLayout from "../components/authentication/AuthLayout";
+import { TextInput } from "../components/authentication/AuthShared";
 import { CREATE_ACCOUNT_MUTATION } from "../graphql/User";
 
 export default function CreateAccount({ navigation }) {

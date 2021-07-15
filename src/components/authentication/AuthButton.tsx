@@ -1,10 +1,10 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
 import styled from "styled-components/native";
-import { colors } from "../../colors";
+import Colors from "../../style/Colors";
 
 const Button = styled.TouchableOpacity`
-  background-color: ${colors.blue};
+  background-color: ${Colors.blue};
   padding: 15px 10px;
   border-radius: 3px;
   width: 100%;

@@ -1,8 +1,8 @@
 import React from "react";
-import { colors } from "../../colors";
 import styled from "styled-components/native";
 import useMe from "../../hooks/useMe";
 import { useNavigation } from "@react-navigation/core";
+import Colors from "../../style/Colors";
 
 const RoomContainer = styled.TouchableOpacity`
   width: 100%;
@@ -27,7 +27,7 @@ const UnreadDot = styled.View`
   width: 10px;
   border-radius: 5px;
   height: 10px;
-  background-color: ${colors.blue};
+  background-color: ${Colors.blue};
 `;
 const Username = styled.Text`
   color: white;

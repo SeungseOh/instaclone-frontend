@@ -1,8 +1,8 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import AuthButton from "../components/auth/AuthButton";
-import AuthLayout from "../components/auth/AuthLayout";
-import { LoginLink } from "../style/User";
+import AuthButton from "../components/authentication/AuthButton";
+import AuthLayout from "../components/authentication/AuthLayout";
+import { LoginLink } from "../style/Text";
 
 export default function Welcome({ navigation }) {
   const goToCreateAccount = () => navigation.navigate("CreateAccount");

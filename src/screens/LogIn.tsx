@@ -3,9 +3,9 @@ import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { isLoggedInVar, logUserIn } from "../apollo";
-import AuthButton from "../components/auth/AuthButton";
-import AuthLayout from "../components/auth/AuthLayout";
-import { TextInput } from "../components/auth/AuthShared";
+import AuthButton from "../components/authentication/AuthButton";
+import AuthLayout from "../components/authentication/AuthLayout";
+import { TextInput } from "../components/authentication/AuthShared";
 import { LOGIN_MUTATION } from "../graphql/User";
 
 export default function Login({ route: { params } }) {
